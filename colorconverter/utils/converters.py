@@ -118,10 +118,10 @@ class RGB:
         # Conversion des valeurs à l'échelle de 0-1 à 0-100
         c, m, y, k = round(c * 100), round(m * 100), round(y * 100), round(k * 100)
 
-        return c, m, y, k
+        return (c, m, y, k)
     
     def __str__(self) -> str:
-        return self.rgb
+        return str(self.rgb)
 
 def convert_to_rgb(value: str, type: ColorType) -> RGB:    
     _rgb = {
