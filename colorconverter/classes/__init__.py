@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Union
+from typing import Union, Self
 from colorconverter.utils.converters import convert_to_rgb, ColorType
 
 
@@ -41,6 +41,14 @@ class Color:
     def yiq(self) -> tuple[float, float, float]:
         return self._value.yiq
     
+    def get_complementary(self) -> Self:
+        r, g, b = self._value.rgb
+        
+        # Inversion of color
+        r = 255 - r
+        g = 255 - g
+        b = 255 - b
+        return Color((r, g, b), ColorType.RGB)
     
     def __str__(self) -> str:
         return self._value.hex

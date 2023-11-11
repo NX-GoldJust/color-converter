@@ -59,7 +59,10 @@ class RGB:
         )
         
     def to_hex(self) -> str:
-        return '#%02x%02x%02x' % self.rgb
+        _rgb_int = [int(color) for color in self.rgb]
+        print(_rgb_int)
+        print(self.rgb)
+        return '#%02x%02x%02x' % tuple(_rgb_int)
     
     def to_rgb(self) -> tuple[float]:
         return [float(self.rgb[0]), float(self.rgb[1]), float(self.rgb[2])]

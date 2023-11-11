@@ -3,8 +3,7 @@ import colorsys
 
 
 
-color = colorconverter.Color("#ff0000", colorconverter.ColorType.HEX)
+color = colorconverter.Color((255, 0, 0), colorconverter.ColorType.RGB)
 
 
-
-print(color.hsv)
+print(color.hex)
