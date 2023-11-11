@@ -60,12 +60,10 @@ class RGB:
         
     def to_hex(self) -> str:
         _rgb_int = [int(color) for color in self.rgb]
-        print(_rgb_int)
-        print(self.rgb)
         return '#%02x%02x%02x' % tuple(_rgb_int)
     
     def to_rgb(self) -> tuple[float]:
-        return [float(self.rgb[0]), float(self.rgb[1]), float(self.rgb[2])]
+        return (float(self.rgb[0]), float(self.rgb[1]), float(self.rgb[2]))
 
     def to_hsl(self) -> tuple[float]:
         # Conversion des valeurs de 0-255 à 0-1
@@ -77,7 +75,7 @@ class RGB:
         # Conversion des valeurs à l'échelle de 0-1 à 0-100
         h, l, s = round(h * 360), round(l * 100), round(s * 100)
 
-        return h, s, l
+        return (h, s, l)
 
 
     def to_hsv(self) -> tuple[float]:
@@ -90,7 +88,7 @@ class RGB:
         # Conversion des valeurs à l'échelle de 0-1 à 0-100
         h, s, v = round(h * 360), round(s * 100), round(v * 100)
 
-        return h, s, v
+        return (h, s, v)
     
     def to_yiq(self) -> tuple[float]:
         return colorsys.rgb_to_yiq(*self.rgb)
