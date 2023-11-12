@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import Union, Self
-from colorconverter.utils.converters import convert_to_rgb, ColorType
+from ..utils.converters import convert_to_rgb, ColorType
 
 
 
